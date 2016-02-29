@@ -1,5 +1,5 @@
 # PTE
-- Dette Git projekt er egenet til PTE projektet for Datamatiker 2. semester.
+- Dette Git projekt er egnet til PTE projektet for Datamatiker 2. semester.
 - Gitmappen er til hele projektet, dvs. også til usecases, tests osv. Derfor skal alle salgs dokumenter herind såsom: txt.filer, viseo filer, png osv.
 
 #Import GitHub (Sørg for at få trykket next til det hele!)
