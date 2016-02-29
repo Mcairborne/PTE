@@ -3,6 +3,7 @@
 - Gitmappen er til hele projektet, dvs. også til usecases, tests osv. Derfor skal alle slags dokumenter herind såsom: txt.filer, viseo filer, png osv.
 - Når du bruger pull funktionen, så vær sikker på, at der ikke er andre som har lavet ændringer i de filer, som du har ændret.
 - Sørg for at pull før I bruger commit/push.
+- I MÅ ALDRIG COMMIT .classpath & .project!
 
 #Import GitHub (Sørg for at få trykket next til det hele!)
 - File -> Import -> Udvid Git mappen -> Projects from Git -> Clone URI(https://github.com/HEDMU-2015/PTE)
