@@ -18,7 +18,7 @@ I skulle gerne have mulighed for at rediger og tilføje, hvis ikke i kan det, s�
 #Tilføjelse af mapper og filer
 Når i tilføjer nye mapper, filer osv. så sørg selvfølglig for at det ikke kollapser med andre! 
 
-TEST SEB
+
 
 
 
