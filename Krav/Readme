@@ -1,1 +1,9 @@
-Gem krav her!
+Krav indeholder:
+- Aktivitetsdiagram
+- Use cases
+- Use case diagram
+
+Navngivningspolitik:
+	Aktivitetsdiagram: AD-[nummer] for UC-[nummer] - [UC navn]
+	Use cases: UC-[nummer] - [UC navn]
+	Use case diagram: N/A

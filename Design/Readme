@@ -1,1 +1,8 @@
-Gem design her!
+Design indeholder:
+- Klassediagram
+- Sekvensdiagram
+
+Navngivningspolitik:
+	Klassediagram: DCD [pakke navn]
+	Sekvensdiagram: SD-[nummer] for OC-[nummer] - [Systemoperations navn]
+	
