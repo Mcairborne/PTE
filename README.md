@@ -19,8 +19,9 @@ I skulle gerne have mulighed for at rediger og tilføje, hvis ikke i kan det, s�
 #Tilføjelse af mapper og filer
 Når i tilføjer nye mapper, filer osv. så sørg selvfølglig for at det ikke kollapser med andre! 
 
-
-
+#Diverse filer og bilag
+Alle jeres diverse filer og bilag må I meget godt smide i de tilsvarende mapper, så vi har det hele samlet på Github.
+I uploader ved at gå i den mappe som filen skal være i og trykker på 'upload files'. Husk at tilføje en beskrivende commit.
 
 
 
