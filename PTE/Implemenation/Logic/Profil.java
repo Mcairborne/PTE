@@ -1,6 +1,6 @@
 package Logic;
 
-public enum Profil {
+public enum Profil { 
 
 	VANDRET, LODRET, UDEFINERET
 }
