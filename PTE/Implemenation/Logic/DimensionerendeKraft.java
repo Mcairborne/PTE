@@ -1,6 +1,6 @@
 package Logic;
 
-public interface DimensionerendeKraft {
+interface DimensionerendeKraft {
 
 	public double getDimensionerendeKraft();
 	
