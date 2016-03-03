@@ -16,7 +16,7 @@ public class VaegtImpl implements Vaegt {
 
 	@Override
 	public void nulstil() {
-		
+		setVaegt(0);
 	}
 
 }
