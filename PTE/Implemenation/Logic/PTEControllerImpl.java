@@ -1,115 +1,175 @@
 package Logic;
 
-import java.util.Observer;
+import java.util.ArrayList;
+import java.util.List;
+import Logic.Observer;
 
+import Exceptions.UdefineretProfilException;
+
+/**
+ * @author Tsvetelin Tsonev - <tsvetelin.tsonev@yahoo.co.uk>
+ *
+ */
 public class PTEControllerImpl implements PTEController {
-
+	
+	private Vinkel vinkel;
+	private Profil profil;
+	private Vaegt vaegt;
+	private DimensionerendeKraft dimensionerendeKraft;
+	private Normalkraft normalKraft;
+	private Tyngdekraft tyngdeKraft;
+	private Forskydningskraft forskydningsKraft;
+	private List<Observer> observers;
+	
+	public PTEControllerImpl() {
+		vinkel = newVinkel();
+		vinkel.setProfil(Profil.UDEFINERET);
+		vaegt = newVaegt();
+		tyngdeKraft = newTyngdeKraft();
+		dimensionerendeKraft = newDimensionerendeKraft();
+		normalKraft = newNormalKraft();
+		forskydningsKraft = newForskydningsKraft();
+		observers = new ArrayList<Logic.Observer>();
+	}
+	
+	protected Vinkel newVinkel() {
+		return new VinkelImpl();
+	}
+	
+	protected Vaegt newVaegt() {
+		return new VaegtImpl();
+	}
+	
+	protected Tyngdekraft newTyngdeKraft() {
+		return new TyngdekraftImpl();
+	}
+	
+	protected DimensionerendeKraft newDimensionerendeKraft() {
+		return new DimensionerendeKraftImpl(vaegt, tyngdeKraft);
+	}
+	
+	protected Normalkraft newNormalKraft() {
+		return new NormalkraftImpl(dimensionerendeKraft, vinkel);
+	}
+	
+	protected Forskydningskraft newForskydningsKraft() {
+		return new ForskydningskraftImpl(vinkel, dimensionerendeKraft);
+	}
+	
 	@Override
 	public void vaelgProfil(Profil profil) {
-		// TODO Auto-generated method stub
-		
+		this.vinkel.setProfil(profil);
 	}
 
 	@Override
 	public void tilmeldObserver(Observer observer) {
-		// TODO Auto-generated method stub
-		
+		this.observers.add(observer);
 	}
 
 	@Override
-	public void notifyObservers(Tilstand tilstand) {
-		// TODO Auto-generated method stub
-		
+	public void notifyObservers(List<Tilstand> tilstande) {
+		for(Logic.Observer o : observers) {
+			o.update(tilstande);
+		}
 	}
 
 	@Override
 	public double getForskydningkraft() {
-		// TODO Auto-generated method stub
-		return 0;
+		double fN = 0;
+		try {
+			fN = this.forskydningsKraft.getForskydningskraft();
+		} catch (UdefineretProfilException e) {
+			//TODO
+		}
+		return fN;
 	}
 
 	@Override
 	public void setForskydningskraft(double forskydningskraft) {
-		// TODO Auto-generated method stub
-		
+		this.forskydningsKraft.setForskydningskraft(forskydningskraft);
 	}
 
 	@Override
 	public double getTyngdekraft() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.tyngdeKraft.getTyngdekraft();
 	}
 
 	@Override
 	public void setTyngdekraft(double tyngdekraft) {
-		// TODO Auto-generated method stub
+		this.setTyngdekraft(tyngdekraft);
 		
 	}
 
 	@Override
 	public void setVinkel(double vinkel) {
-		// TODO Auto-generated method stub
-		
+		this.vinkel.setVinkel(vinkel);
+		List<Tilstand> tilstande = new ArrayList<Tilstand>();
+		tilstande.add(Tilstand.VINKEL);
+		tilstande.add(Tilstand.NORMALKRAFT);
+		tilstande.add(Tilstand.FORSKYDNINGSKRAFT);
+		this.notifyObservers(tilstande);
 	}
 
 	@Override
 	public double getVinkel() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.vinkel.getVinkel();
 	}
 
 	@Override
 	public void setProfil(Profil profil) {
-		// TODO Auto-generated method stub
-		
+		this.vinkel.setProfil(profil);
 	}
 
 	@Override
 	public Profil getProfil() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.vinkel.getProfil();
 	}
 
 	@Override
 	public double getVaegt() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.vaegt.getVaegt();
 	}
 
 	@Override
 	public void setVaegt(double vaegt) {
-		// TODO Auto-generated method stub
-		
+		this.vaegt.getVaegt();
 	}
 
 	@Override
 	public double getNormalkraft() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.normalKraft.getNormalkraft();
 	}
 
 	@Override
 	public void setNormalkraft(double normalkraft) {
-		// TODO Auto-generated method stub
-		
+		this.normalKraft.setNormalkraft(normalkraft);
 	}
 
 	@Override
 	public double getDimensionerendeKraft() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.dimensionerendeKraft.getDimensionerendeKraft();
 	}
 
 	@Override
 	public void setDimensioneredndeKraft(double dimensioneredndeKraft) {
-		// TODO Auto-generated method stub
-		
+		this.dimensionerendeKraft.setDimensionerendeKraft(dimensioneredndeKraft);
+		List<Tilstand> tilstande = new ArrayList<Tilstand>();
+		tilstande.add(Tilstand.VAEGT);
+		tilstande.add(Tilstand.TYNGDEKRAFT);
+		tilstande.add(Tilstand.DIMENSIONERENDE_KRAFT);
+		tilstande.add(Tilstand.NORMALKRAFT);
+		tilstande.add(Tilstand.FORSKYDNINGSKRAFT);
+		this.notifyObservers(tilstande);
 	}
 
 	@Override
 	public void nulstil() {
-		// TODO Auto-generated method stub
-		
+		this.dimensionerendeKraft.nulstil();
+		this.forskydningsKraft.nulstil();
+		this.normalKraft.nulstil();
+		this.tyngdeKraft.nulstil();
+		this.vaegt.nulstil();
+		this.vinkel.nulstil();
 	}
 
 }
