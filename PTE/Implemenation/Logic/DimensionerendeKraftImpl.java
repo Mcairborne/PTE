@@ -12,11 +12,11 @@ class DimensionerendeKraftImpl implements DimensionerendeKraft {
 		dimensionerendeKraft = vaegt.getVaegt() * tyngdekraft.getTyngdekraft();
 
 		return dimensionerendeKraft;
-	}
+	} 
 
 	@Override
 	public void setDimensionerendeKraft(double dimensionerendeKraft) {
-		this.dimensionerendeKraft = dimensionerendeKraft; 
+		this.dimensionerendeKraft = dimensionerendeKraft;
 	}
 
 	@Override
