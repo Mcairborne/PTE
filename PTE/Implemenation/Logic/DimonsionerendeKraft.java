@@ -1,11 +1,11 @@
 package Logic;
 
-interface DimonsionerendeKraft {
+interface DimensionerendeKraft {
 
-	public double getDimonsionerendeKraft();
+	public double getDimensionerendeKraft();
 	
-	public void setDimonsionerendeKraft(double dimensionerendeKraft);
+	public void setDimensionerendeKraft(double dimensionerendeKraft);
 	
 	public void nulstil();
-	
+	 
 }
