@@ -1,7 +1,7 @@
 package Logic;
 
 import java.util.List;
-import java.util.Observer;
+import Logic.Observer;
 
 public interface PTEController {
 
