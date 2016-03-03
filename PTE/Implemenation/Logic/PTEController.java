@@ -24,7 +24,7 @@ public interface PTEController {
 	
 	public void setProfil(Profil profil);
 	
-	public enum getProfil();
+	public Profil getProfil();
 	
 	public double getVaegt();
 	
