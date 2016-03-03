@@ -12,7 +12,7 @@ public class VaegtImpl implements Vaegt {
 	@Override
 	public void setVaegt(double vaegt) {
 		this.vaegt = vaegt;
-	}
+	} 
 
 	@Override
 	public void nulstil() {

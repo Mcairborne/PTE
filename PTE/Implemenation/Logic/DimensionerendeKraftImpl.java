@@ -16,7 +16,7 @@ class DimensionerendeKraftImpl implements DimensionerendeKraft {
 
 	@Override
 	public void setDimensionerendeKraft(double dimensionerendeKraft) {
-		this.dimensionerendeKraft = dimensionerendeKraft;
+		this.dimensionerendeKraft = dimensionerendeKraft; 
 	}
 
 	@Override
