@@ -7,5 +7,4 @@ interface DimensionerendeKraft {
 	public void setDimensionerendeKraft(double dimensionerendeKraft);
 	
 	public void nulstil();
-	 
 }
