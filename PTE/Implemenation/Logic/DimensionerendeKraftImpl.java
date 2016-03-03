@@ -3,10 +3,10 @@ package Logic;
 class DimensionerendeKraftImpl implements DimensionerendeKraft {
 
 	private double dimensionerendeKraft = 0;
-	private double vaegt;
-	private double tyngdekraft;
+	private Vaegt vaegt;
+	private Tyngdekraft tyngdekraft;
 
-	public DimensionerendeKraftImpl(double vaegt, double tyngdekraft){
+	public DimensionerendeKraftImpl(Vaegt vaegt, Tyngdekraft tyngdekraft){
 		this.vaegt = vaegt;
 		this.tyngdekraft = tyngdekraft;
 	}
@@ -14,7 +14,7 @@ class DimensionerendeKraftImpl implements DimensionerendeKraft {
 	
 	@Override
 	public double getDimensionerendeKraft() {
-		dimensionerendeKraft = vaegt * tyngdekraft;
+		dimensionerendeKraft = vaegt.getVaegt() * tyngdekraft.getTyngdekraft();
 		return dimensionerendeKraft;
 	} 
 
@@ -25,8 +25,8 @@ class DimensionerendeKraftImpl implements DimensionerendeKraft {
 
 	@Override
 	public void nulstil() {
-		vaegt = 0;
-		tyngdekraft = 0;
+		vaegt.nulstil();
+		tyngdekraft.nulstil();
 	}
 
 }
