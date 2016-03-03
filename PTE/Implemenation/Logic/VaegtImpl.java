@@ -3,7 +3,7 @@ package Logic;
 public class VaegtImpl implements Vaegt {
 
 	private double vaegt;
-	
+	 
 	@Override
 	public double getVaegt() {
 		return vaegt;

@@ -7,7 +7,7 @@ class DimensionerendeKraftImpl implements DimensionerendeKraft {
 		Vaegt vaegt = new VaegtImpl();
 		
 		double dimensionerende = vaegt.getVaegt() * Tyngdekraft.getTyngdekraft();
-		
+		 
 		return dimensionerende;
 	}
 
