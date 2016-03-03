@@ -2,7 +2,7 @@ package Logic;
 
 class DimensionerendeKraftImpl implements DimensionerendeKraft {
 
-	double dimensionerendeKraft;
+	double dimensionerendeKraft = 0;
 
 	@Override
 	public double getDimensionerendeKraft() {
