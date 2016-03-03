@@ -3,6 +3,12 @@ package Logic;
 import Exceptions.UdefineretProfilException;
 
 public class ForskydningskraftImpl implements Forskydningskraft  {
+	Vinkel v;
+	DimensionerendeKraft dk;
+	public ForskydningskraftImpl(Vinkel v, DimensionerendeKraft dk){
+		this.v = v;
+		this.dk = dk;
+	}
 	double forskydningskraft;
 	
 	@Override
@@ -13,10 +19,7 @@ public class ForskydningskraftImpl implements Forskydningskraft  {
 
 	@Override
 	public double getForskydningskraft() throws UdefineretProfilException {
-		Vinkel v = new VinkelImpl();
 		double vinkel = v.getVinkel();
-		DimensionerendeKraft dk = new DimensionerendeKraftImpl();
-		
 		Profil profil = v.getProfil();
 		
 		if (profil == Profil.VANDRET){
