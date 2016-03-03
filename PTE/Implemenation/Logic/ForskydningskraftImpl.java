@@ -26,7 +26,7 @@ public class ForskydningskraftImpl implements Forskydningskraft  {
 			return (Math.cos(Math.toRadians(vinkel))*dk.getDimensionerendeKraft());
 		}
 		else if (profil == Profil.LODRET){
-			return (Math.sin(vinkel)*dk.getDimensionerendeKraft());
+			return (Math.sin(Math.toRadians((vinkel)))*dk.getDimensionerendeKraft());
 		}
 		else throw new UdefineretProfilException("Udefineret Profil");
 	}
