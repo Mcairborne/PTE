@@ -1,5 +1,6 @@
 package Logic;
 
+import java.util.List;
 import java.util.Observer;
 
 public interface PTEController {
@@ -8,7 +9,7 @@ public interface PTEController {
 	
 	public void tilmeldObserver(Observer observer);
 	
-	public void notifyObservers(Tilstand tilstand);
+	public void notifyObservers(List<Tilstand> tilstande);
 	
 	public double getForskydningkraft();
 	
