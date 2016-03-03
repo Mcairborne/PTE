@@ -6,7 +6,7 @@ class DimensionerendeKraftImpl implements DimensionerendeKraft {
 
 	@Override
 	public double getDimensionerendeKraft() {
-		Vaegt vaegt = new VaegtImpl(vaegt.getVaegt());
+		Vaegt vaegt = new VaegtImpl();
 		Tyngdekraft tyngdekraft = new TyngdekraftImpl();
 
 		dimensionerendeKraft = vaegt.getVaegt() * tyngdekraft.getTyngdekraft();

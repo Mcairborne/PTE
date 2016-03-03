@@ -3,10 +3,6 @@ package Logic;
 public class VaegtImpl implements Vaegt {
 
 	private double vaegt;
-	 
-	public VaegtImpl(double vaegt){
-		this.vaegt = vaegt;
-	}
 	
 	@Override
 	public double getVaegt() {
