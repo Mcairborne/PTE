@@ -6,5 +6,5 @@ interface Vaegt {
 	
 	public void setVaegt(double vaegt);
 	
-	public void nulstil();
+	public void nulstil(); 
 }
