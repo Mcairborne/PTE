@@ -41,7 +41,7 @@ import org.junit.Test;
 			
 			assertEquals(98.16,dk.getDimensionerendeKraft(),0.001);
 			
-			
+			 
 		}
 		public class VaegtStubTiKg implements Vaegt {
 
