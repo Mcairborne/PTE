@@ -8,7 +8,7 @@ interface Vinkel {
 
 	public void setProfil(Profil profil);
 
-	public enum getProfil();
+	public Profil getProfil();
 
 	public void nulstil();
 	
